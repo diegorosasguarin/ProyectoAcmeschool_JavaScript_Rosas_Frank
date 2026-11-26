@@ -1,0 +1,362 @@
+:root {
+  --azul: #1e3a8a;
+  --azul-oscuro: #172554;
+  --azul-suave: #dbeafe;
+  --verde: #0d9488;
+  --verde-oscuro: #0f766e;
+  --rojo: #dc2626;
+  --rojo-suave: #fee2e2;
+  --exito: #16a34a;
+  --exito-suave: #dcfce7;
+  --fondo: #f1f5f9;
+  --blanco: #ffffff;
+  --texto: #1e293b;
+  --gris: #64748b;
+  --borde: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  flex: 1;
+  animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 16px;
+  background: var(--blanco);
+  border-top: 1px solid var(--borde);
+  color: var(--gris);
+  font-size: 0.9rem;
+}
+
+/* Tarjetas */
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.titulo-modulo {
+  color: var(--azul);
+  margin-bottom: 6px;
+  font-size: 1.55rem;
+}
+
+.subtitulo {
+  color: var(--gris);
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+/* Formularios */
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+/* Botones */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primario {
+  background: var(--azul);
+  color: var(--blanco);
+}
+
+.btn-primario:hover {
+  background: var(--azul-oscuro);
+}
+
+.btn-verde {
+  background: var(--verde);
+  color: var(--blanco);
+}
+
+.btn-verde:hover {
+  background: var(--verde-oscuro);
+}
+
+.btn-rojo {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+.btn-rojo:hover {
+  background: #b91c1c;
+}
+
+.btn-gris {
+  background: #e2e8f0;
+  color: var(--texto);
+}
+
+.btn-gris:hover {
+  background: #cbd5e1;
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 0.82rem;
+}
+
+.acciones-tabla {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Tablas */
+.tabla-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th, td {
+  padding: 11px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--borde);
+}
+
+th {
+  background: #f8fafc;
+  color: var(--azul);
+  font-weight: 700;
+}
+
+tr:hover {
+  background: #f8fafc;
+}
+
+/* Etiquetas y alertas */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge-azul {
+  background: var(--azul-suave);
+  color: var(--azul);
+}
+
+.badge-verde {
+  background: var(--exito-suave);
+  color: var(--exito);
+}
+
+.badge-rojo {
+  background: var(--rojo-suave);
+  color: var(--rojo);
+}
+
+.alerta {
+  padding: 12px 14px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.alerta-error {
+  background: var(--rojo-suave);
+  color: var(--rojo);
+}
+
+.alerta-ok {
+  background: var(--exito-suave);
+  color: var(--exito);
+}
+
+/* Catálogo público de exámenes */
+.grid-examenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 18px;
+}
+
+.card-examen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-examen:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.09);
+}
+
+/* Encabezado fijo y reloj en tiempo real */
+.header-examen-activo {
+  position: sticky;
+  top: 64px;
+  z-index: 20;
+  background: var(--blanco);
+  border-left: 5px solid var(--azul);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.reloj-caja {
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 145px;
+}
+
+.reloj-tiempo {
+  font-size: 1.65rem;
+  font-weight: 800;
+  display: block;
+}
+
+.reloj-urgente {
+  background: var(--rojo);
+}
+
+/* Opciones de respuesta en el examen */
+.opcion-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.opcion-radio:hover {
+  background: #f8fafc;
+}
+
+/* Constructor de preguntas */
+.bloque-pregunta {
+  background: #f8fafc;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.fila-respuesta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.fila-respuesta input[type="text"] {
+  flex: 1;
+}
+
+@media (max-width: 640px) {
+  .header-examen-activo {
+    position: static;
+  }
+  .fila-respuesta {
+    flex-wrap: wrap;
+  }
+  .btn {
+    width: 100%;
+  }
+  .acciones-tabla .btn {
+    width: auto;
+  }
+}
