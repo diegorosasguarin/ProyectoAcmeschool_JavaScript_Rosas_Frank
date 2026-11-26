@@ -21,7 +21,7 @@ Aplicación web desarrollada en **HTML5**, **CSS3** y **JavaScript modular** uti
 ## Estructura del Proyecto
 
 ```text
-ProyectoAcmeschool_JavaScript_RosasFrank/
+ProyectoAcmeschool_JavaScript_Rosas_Frank/
 ├── index.html
 ├── README.md
 ├── css/
